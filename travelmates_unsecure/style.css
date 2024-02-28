@@ -1,0 +1,216 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+
+
+#btnins{
+	color: #f5593d;	
+	font-size: 0.8rem;
+}
+
+#joinimg:hover {
+
+	-webkit-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	transform: scale(1.05);
+	transition: 0.5s ease;
+
+}
+
+/*SEARCH BAR CSS*/
+
+.box{
+
+	width: 500px;
+
+	height: 50px;
+
+	background-color: white;
+
+	border-radius: 30px;
+
+	display: flex;
+
+	align-items: center;
+
+	padding: 20px;
+
+}
+
+@media only screen and (max-width: 600px) {
+  .box{
+  	width: 400px;
+  }
+}
+
+@media only screen and (max-width: 447px) {
+  .box{
+  	width: 300px;
+  }
+}
+
+
+
+.stext{
+
+	width: 93%;
+
+	height: 40px;
+
+	border: none;
+
+	outline: none;
+
+	font-size: 18px;
+
+	padding-left: 10px;
+
+}
+
+.stext:focus {
+
+	color: #f5593d;
+
+}
+
+.sbutton{
+
+	background-color: white;
+
+	font-size: 20px;
+
+	color: #f5593d;
+
+	border : none;
+}
+
+
+
+.slinks{
+	width: 500px;
+}
+
+.linkbox{
+	color : white;
+	padding-top : 3%;
+	border-radius: 20%;
+	margin: 20px;
+	font-size: 26px;
+	width: 90px;
+	height: 90px;
+	background-color: #f5593d;
+}
+
+.linkbox : hover {
+	background-color: white;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .slinks{
+  	width: 400px;
+  }
+}
+
+@media only screen and (max-width: 447px) {
+  .slinks{
+  	width: 300px;
+  }
+
+  .linkbox{
+	width: 70px;
+	height: 70px;
+}
+}
+
+
+/* LATEST POSTS CSS */
+.img-post{
+	transition: transform 0.5s, filter 0.5s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(50%);
+}
+
+.img-post:hover {
+  filter: brightness(100%);
+  transform: scale(1.02);
+}
+
+.post-text{
+		color: white;
+        position: relative;
+        
+        top: -64px;
+        left: 10px;
+        overflow: hidden; /* make sure it hides the content that overflows */
+  		white-space: nowrap; /* don't break the line */
+  		text-overflow: ellipsis;
+        font-size: 15px;
+        font-weight: bold;
+    
+}
+
+
+.post-auteur{
+
+		color: white;
+        position: relative;
+        top: -64px;
+        left: 10px;
+        overflow: hidden;
+        font-size: 12px;
+        text-transform: none;
+}
+
+.img2{
+	height: 300px;
+}
+
+@media only screen and (max-width: 600px) {
+  .img2{
+	height: 380px;
+}
+}
+
+.img1{
+	height: 380px;
+}
+
+
+@media only screen and (max-width: 991px) and (min-width:768px ) {
+  .img2{
+	height: 200px;
+}
+
+	.img1{
+		height: 300px;
+	}
+
+}
+
+
+.banner__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+}
+
+
+
