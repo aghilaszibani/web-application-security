@@ -4,7 +4,7 @@ Ce guide vous aidera à configurer l’environnement nécessaire pour tester les
 
 ## Prérequis
 
-Avant de commencer, assurez-vous d'avoir installé soit Wamp soit Xampp sur votre système. Vous pouvez télécharger Wamp depuis [ici](https://www.wampserver.com/) ou Xampp depuis [ici](https://www.apachefriends.org/fr/index.html).
+Avant de commencer, assurez-vous d'avoir installé soit Wamp soit Xampp sur votre système. Vous pouvez télécharger Wamp depuis [ici]([https://www.wampserver.com/](https://wampserver.aviatechno.net/)) ou Xampp depuis [ici](https://www.apachefriends.org/fr/index.html).
 
 ## Étapes à suivre
 
