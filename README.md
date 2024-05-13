@@ -26,3 +26,41 @@ Avant de commencer, assurez-vous d'avoir installé soit Wamp soit Xampp sur votr
    - Pour accéder à l'application web vulnérable, ouvrez un navigateur web et entrez l'URL `http://localhost/travelmates_unsecure`.
    - Pour accéder à l'application web sécurisée, entrez l'URL `http://localhost/travelmates`.
    - Explorez les fonctionnalités de chaque site pour découvrir les vulnérabilités.
+
+# Démo de sécurité : Test d'attaques sur l'application web
+
+Dans cette section, nous allons démontrer plusieurs attaques sur l'application web TravelMates. L'objectif est d'identifier et de comprendre les failles de sécurité en exploitant diverses vulnérabilités présentes dans l'application.
+
+## Démo d'attaques par injection SQL
+
+Dans cette section, nous allons démontrer deux attaques par injection SQL sur l'application TravelMates. L'objectif est de contourner le mécanisme d'authentification en exploitant des failles dans le formulaire de connexion.
+
+### Attaque 1 : Contournement basé sur l’évaluation toujours vraie
+
+Pour cette première attaque, nous allons exploiter une faille dans le formulaire de connexion en injectant une requête SQL manipulée dans le champ du mot de passe.
+
+#### Méthode :
+Nous allons saisir un pseudo valide dans le premier champ (`aghilas`) et dans le champ du mot de passe, nous entrerons `' OR '1'='1`. Cette manipulation de la requête SQL force l'évaluation de la condition à vrai, contournant ainsi l'authentification et permettant l'accès sans fournir de mot de passe valide.
+
+#### Procédure :
+1. Accédez à la page de connexion.
+2. Entrez le pseudo `aghilas` dans le champ correspondant.
+3. Dans le champ du mot de passe, entrez `' OR '1'='1`.
+4. Soumettez le formulaire.
+
+![image](https://github.com/aghilaszibani/web-application-security/assets/161652334/a5540041-d473-4ccc-89ae-f676f9d25ca9)
+
+
+### Attaque 2 : Utilisation des commentaires SQL
+
+Pour la deuxième attaque, nous exploiterons également une faille dans le formulaire de connexion en utilisant les commentaires SQL pour neutraliser la vérification du mot de passe.
+
+#### Méthode :
+En insérant `'--` après le nom d'utilisateur, nous empêcherons la requête SQL de vérifier le mot de passe, permettant ainsi l'accès sans authentification valide.
+
+#### Procédure :
+1. Accédez à la page de connexion.
+2. Entrez le pseudo suivi de `'--` dans le champ correspondant.
+3. Soumettez le formulaire.
+
+Ces attaques mettent en évidence l'importance de sécuriser les entrées utilisateur pour éviter les injections SQL.
