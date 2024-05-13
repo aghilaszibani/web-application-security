@@ -27,9 +27,9 @@ Avant de commencer, assurez-vous d'avoir installé soit Wamp soit Xampp sur votr
    - Pour accéder à l'application web sécurisée, entrez l'URL `http://localhost/travelmates`.
    - Explorez les fonctionnalités de chaque site pour découvrir les vulnérabilités.
 
-# Démo de sécurité : Test d'attaques sur l'application web
+# Démo de sécurité : Test d'attaques et mesures de sécurité sur l'application web
 
-Dans cette section, nous allons démontrer plusieurs attaques sur l'application web TravelMates. L'objectif est d'identifier et de comprendre les failles de sécurité en exploitant diverses vulnérabilités présentes dans l'application.
+Dans cette section, nous allons démontrer plusieurs attaques sur l'application web TravelMates ainsi que les mesures de sécurité mises en place pour contrer ces attaques. L'objectif est d'identifier et de comprendre les failles de sécurité en exploitant diverses vulnérabilités présentes dans l'application.
 
 ## Démo d'attaques par injection SQL
 
@@ -63,4 +63,20 @@ En insérant `'--` après le nom d'utilisateur, nous empêcherons la requête SQ
 2. Entrez le pseudo suivi de `'--` dans le champ correspondant.
 3. Soumettez le formulaire.
 
-Ces attaques mettent en évidence l'importance de sécuriser les entrées utilisateur pour éviter les injections SQL.
+![image](https://github.com/aghilaszibani/web-application-security/assets/161652334/d4228776-264e-4ef8-9450-2ca8638cbeca)
+
+### Mesure de sécurité : Utilisation de requêtes préparées
+
+Les requêtes préparées permettent de séparer les instructions SQL des données utilisateur en utilisant des marqueurs de paramètres. Au lieu d'incorporer directement les données utilisateur dans la requête SQL, les valeurs sont fournies séparément, ce qui permet à la base de données de distinguer les données des instructions SQL.
+
+#### Fonctionnement :
+En utilisant des marqueurs de paramètres, les données utilisateur sont dissociées des instructions SQL, éliminant ainsi le risque d'injection SQL.
+
+#### Implémentation dans notre application web PHP :
+Nous utilisons l'extension MySQLi en PHP pour appliquer l'utilisation de requêtes préparées. La requête SQL est formulée avec des marqueurs de paramètres (?) pour les valeurs de pseudo et de mot_de_passe.
+- Les valeurs des paramètres sont ensuite liées à la requête via la méthode `bind_param()`.
+- La requête est exécutée de manière sécurisée avec `execute()`.
+
+![image](https://github.com/aghilaszibani/web-application-security/assets/161652334/2ea55873-8429-4561-a860-278236689a49)
+
+
